@@ -15,9 +15,8 @@ namespace AlgorithmsAndDataStructures.LinearDataStructures
         public int? GetMin(int[] input)
         {
             int? min = null;
-            for (int i = 0; i < input.Length; i++)
+            foreach (var element in input)
             {
-                int element = input[i];
                 if (min == null || element < min)
                 {
                     min = element;
@@ -40,13 +39,13 @@ namespace AlgorithmsAndDataStructures.LinearDataStructures
         /**
          * Finds out if an array has duplicates
          * Runtime: O(n)
+         * Space Complexity: O(n) from auxiliary data structure
          */
         public bool HasDuplicates(int[] input)
         {
             var dupes = new Dictionary<int, bool>();
-            for (int i = 0; i < input.Length; i++)
+            foreach (var val in input)
             {
-                int val = input[i];
                 if (dupes.ContainsKey(val))
                 {
                     return true;
